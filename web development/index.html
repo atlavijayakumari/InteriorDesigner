@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Interiora | Interior Design Studio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<header>
+
+    <nav class="navbar">
+
+        <a class="logo" href="#home">
+            Interiora<span>.</span>
+        </a>
+
+        <div class="nav-links" id="navLinks">
+
+            <a href="#home">Home</a>
+            <a href="#designs">Designs</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+
+        </div>
+
+
+        <div class="nav-buttons" id="navButtons">
+
+            <button class="login-btn"
+                    onclick="openModal('loginModal')">
+                Login
+            </button>
+
+            <button class="primary-btn"
+                    onclick="openModal('signupModal')">
+                Get Started
+            </button>
+
+        </div>
+
+
+        <div class="user-menu" id="userMenu">
+
+            <span id="userName"></span>
+
+            <button class="logout-btn"
+                    onclick="logout()">
+                Logout
+            </button>
+
+        </div>
+
+
+        <button class="menu-btn"
+                onclick="toggleMenu()">
+            ☰
+        </button>
+
+    </nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-text">
+
+        <p class="tag">
+            INTERIOR DESIGN • ARCHITECTURE • LIFESTYLE
+        </p>
+
+        <h1>
+            Thoughtful spaces,<br>
+            <span>beautifully designed.</span>
+        </h1>
+
+        <p class="hero-description">
+            We create refined, functional interiors that reflect
+            your personality and elevate the way you live.
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <button class="primary-btn"
+                    onclick="scrollToDesigns()">
+                Explore Our Designs →
+            </button>
+
+            <button class="outline-btn"
+                    onclick="openModal('consultationModal')">
+                Book a Consultation
+            </button>
+
+        </div>
+
+
+        <div class="trust">
+
+            <div>
+                <strong>500+</strong>
+                <span>Projects Delivered</span>
+            </div>
+
+            <div>
+                <strong>10+</strong>
+                <span>Years of Experience</span>
+            </div>
+
+            <div>
+                <strong>4.9/5</strong>
+                <span>Client Satisfaction</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-image">
+
+        <img
+            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=80"
+            alt="Contemporary interior">
+
+    </div>
+
+</section>
+
+
+<!-- DESIGNS -->
+
+<section class="section" id="designs">
+
+    <div class="section-heading">
+
+        <div>
+
+            <p class="tag">
+                OUR WORK
+            </p>
+
+            <h2>
+                Designed for living.
+            </h2>
+
+        </div>
+
+
+        <input
+            type="search"
+            id="search"
+            placeholder="Search designs..."
+            oninput="filterDesigns()">
+
+    </div>
+
+
+    <div class="filters">
+
+        <button class="active"
+                onclick="filterCategory('all', this)">
+            All
+        </button>
+
+        <button onclick="filterCategory('living', this)">
+            Living Room
+        </button>
+
+        <button onclick="filterCategory('bedroom', this)">
+            Bedroom
+        </button>
+
+        <button onclick="filterCategory('kitchen', this)">
+            Kitchen
+        </button>
+
+        <button onclick="filterCategory('office', this)">
+            Office
+        </button>
+
+    </div>
+
+
+    <div class="design-grid"
+         id="designGrid">
+    </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="services"
+         id="services">
+
+    <p class="tag">
+        WHAT WE DO
+    </p>
+
+    <h2>
+        Everything you need<br>
+        for your dream space.
+    </h2>
+
+
+    <div class="service-grid">
+
+        <div class="service">
+
+            <span>01</span>
+
+            <h3>
+                Interior Design
+            </h3>
+
+            <p>
+                Complete interior planning designed
+                around your lifestyle.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <span>02</span>
+
+            <h3>
+                Space Planning
+            </h3>
+
+            <p>
+                Smart layouts that make every part
+                of your space useful.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <span>03</span>
+
+            <h3>
+                3D Visualization
+            </h3>
+
+            <p>
+                See your dream interior before
+                construction begins.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <span>04</span>
+
+            <h3>
+                Project Management
+            </h3>
+
+            <p>
+                We manage your project from concept
+                to completion.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about section"
+         id="about">
+
+    <div class="about-image">
+
+        <img
+            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80"
+            alt="Interior design">
+
+    </div>
+
+
+    <div>
+
+        <p class="tag">
+            ABOUT INTERIORA
+        </p>
+
+        <h2>
+            Design that tells your story.
+        </h2>
+
+        <p>
+            We believe a great home isn't just beautiful.
+            It should reflect the people who live in it.
+        </p>
+
+        <p>
+            Our designers combine creativity, functionality
+            and timeless style to create spaces you love.
+        </p>
+
+        <button class="primary-btn"
+                onclick="openModal('consultationModal')">
+            Start Your Project →
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact"
+         id="contact">
+
+    <p class="tag">
+        LET'S CREATE
+    </p>
+
+    <h2>
+        Ready to transform<br>
+        your space?
+    </h2>
+
+    <button class="primary-btn"
+            onclick="openModal('consultationModal')">
+        Book a Free Consultation →
+    </button>
+
+</section>
+
+
+<!-- LOGIN MODAL -->
+
+<div class="modal"
+     id="loginModal">
+
+    <div class="modal-box">
+
+        <button class="close"
+                onclick="closeModal('loginModal')">
+            ×
+        </button>
+
+        <h2>
+            Welcome Back
+        </h2>
+
+        <p>
+            Login to your Interiora account.
+        </p>
+
+
+        <form id="loginForm">
+
+            <input
+                type="email"
+                id="loginEmail"
+                placeholder="Email address"
+                required>
+
+
+            <div class="password">
+
+                <input
+                    type="password"
+                    id="loginPassword"
+                    placeholder="Password"
+                    required>
+
+                <button
+                    type="button"
+                    onclick="showPassword('loginPassword')">
+                    👁
+                </button>
+
+            </div>
+
+
+            <button class="primary-btn full">
+                Login
+            </button>
+
+        </form>
+
+
+        <p class="switch">
+
+            Don't have an account?
+
+            <button
+                onclick="switchModal('loginModal','signupModal')">
+                Sign up
+            </button>
+
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- SIGNUP MODAL -->
+
+<div class="modal"
+     id="signupModal">
+
+    <div class="modal-box">
+
+        <button class="close"
+                onclick="closeModal('signupModal')">
+            ×
+        </button>
+
+
+        <h2>
+            Create Account
+        </h2>
+
+        <p>
+            Start designing your dream space.
+        </p>
+
+
+        <form id="signupForm">
+
+            <input
+                type="text"
+                id="signupName"
+                placeholder="Full name"
+                required>
+
+
+            <input
+                type="email"
+                id="signupEmail"
+                placeholder="Email address"
+                required>
+
+
+            <input
+                type="password"
+                id="signupPassword"
+                placeholder="Password"
+                required>
+
+
+            <input
+                type="password"
+                id="confirmPassword"
+                placeholder="Confirm password"
+                required>
+
+
+            <button class="primary-btn full">
+                Create Account
+            </button>
+
+        </form>
+
+
+        <p class="switch">
+
+            Already have an account?
+
+            <button
+                onclick="switchModal('signupModal','loginModal')">
+                Login
+            </button>
+
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- DESIGN DETAILS MODAL -->
+
+<div class="modal"
+     id="designModal">
+
+    <div class="modal-box">
+
+        <button class="close"
+                onclick="closeModal('designModal')">
+            ×
+        </button>
+
+
+        <img
+            id="detailImage"
+            class="detail-image"
+            alt="Design">
+
+
+        <p class="tag"
+           id="detailCategory">
+        </p>
+
+        <h2 id="detailTitle"></h2>
+
+        <p id="detailDescription"></p>
+
+        <h3 id="detailPrice"></h3>
+
+
+        <button class="primary-btn full"
+                onclick="openConsultation()">
+            Enquire About This Design
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- CONSULTATION MODAL -->
+
+<div class="modal"
+     id="consultationModal">
+
+    <div class="modal-box">
+
+        <button class="close"
+                onclick="closeModal('consultationModal')">
+            ×
+        </button>
+
+
+        <h2>
+            Book a Consultation
+        </h2>
+
+        <p>
+            Tell us about your project.
+        </p>
+
+
+        <form id="consultForm">
+
+            <input
+                type="text"
+                id="clientName"
+                placeholder="Your name"
+                required>
+
+
+            <input
+                type="email"
+                id="clientEmail"
+                placeholder="Email address"
+                required>
+
+
+            <select id="room">
+
+                <option>Living Room</option>
+                <option>Bedroom</option>
+                <option>Kitchen</option>
+                <option>Office</option>
+                <option>Entire Home</option>
+
+            </select>
+
+
+            <textarea
+                id="message"
+                placeholder="Tell us about your project">
+            </textarea>
+
+
+            <button class="primary-btn full">
+                Request Consultation
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div id="toast"></div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
